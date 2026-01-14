@@ -1,0 +1,609 @@
+.Home-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+
+}
+
+/* Hero Header Container */
+.Home-Header {
+    height: 50vh;
+    /* Adjust based on your design */
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(255, 238, 7, 0.8), rgba(20, 41, 34, 0.8)),
+        url('../../../assets/school-bg.jpg');
+    /* Optional background image */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+/* Main Heading Animation */
+.text1 {
+    font-size: clamp(32px, 5vw, 56px);
+    /* Responsive font size */
+    color: #ffffff;
+    font-weight: 900;
+    margin-bottom: 20px;
+    max-width: 900px;
+    line-height: 1.2;
+
+    /* Animation Properties */
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(30px);
+    animation: revealHero 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+    /* Subtle Text Shimmer */
+    background: linear-gradient(to right, #ffffff 20%, #75061e 50%, #ffffff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: revealHero 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+        shimmer 4s linear infinite;
+}
+
+/* Subtext Animation */
+.text2 {
+    font-size: clamp(16px, 2vw, 22px);
+    color: #0a0901;
+    /* TeCc Green Accent */
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    /* Animation Properties */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealSubtext 1s ease-out forwards 0.8s;
+    /* Delayed start */
+}
+
+/* --- Keyframes --- */
+
+@keyframes revealHero {
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealSubtext {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    to {
+        background-position: -200% center;
+    }
+}
+
+
+/* Container Layout */
+.vimi-secion {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+    padding: 0 5%;
+    perspective: 1000px;
+    /* Essential for the 3D tilt effect */
+}
+
+.vi,
+.mi {
+    width: 45%;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 28px;
+    /* Sophisticated shadow */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+
+    /* Animation Properties */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: cardEntrance 0.8s ease forwards;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mi {
+    animation-delay: 0.2s;
+}
+
+/* Staggered entry */
+
+/* Hover Effect: 3D Tilt and Glow */
+.vi:hover,
+.mi:hover {
+    transform: translateY(-10px) rotateX(2deg) rotateY(1deg);
+    box-shadow: 0 25px 50px rgba(39, 143, 46, 0.1);
+    /* TeCc Green tint */
+    border-color: #278f2e;
+}
+
+/* Heading Styling */
+.viheading,
+.miheading {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(146, 97, 7);
+    /* Your gold color */
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Animated accent line next to heading */
+.viheading::after,
+.miheading::after {
+    content: '';
+    height: 2px;
+    width: 50px;
+    background: #278f2e;
+    transition: width 0.4s ease;
+}
+
+.vi:hover .viheading::after,
+.mi:hover .miheading::after {
+    width: 100px;
+}
+
+/* Body Text Styling */
+.mitext,
+.vitext {
+    font-size: 1.25rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+/* Background Decorative Element */
+.vi::before,
+.mi::before {
+    content: '“';
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 150px;
+    color: rgba(39, 143, 46, 0.05);
+    font-family: serif;
+}
+
+/* --- Keyframes --- */
+@keyframes cardEntrance {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Mobile Fix --- */
+@media (max-width: 850px) {
+    .vimi-secion {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .vi,
+    .mi {
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+/* Container for the Form Section */
+.form {
+    margin: 60px auto;
+    width: 90%;
+    max-width: 800px;
+    background: rgba(212, 194, 31, 0.95);
+    /* Your yellow with a slight transparency */
+    padding: 50px 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    /* Animation: Subtle slide up on page load */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: formFadeIn 0.8s ease forwards;
+}
+
+/* Heading Styling */
+.applyform {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: #140e01;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.addmissiondiv {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(20, 14, 1, 0.7);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Button Layout */
+.button {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Shared Button Styles */
+.Dbutton,
+.Sbutton {
+    padding: 18px 35px;
+    border-radius: 12px;
+    border: 2px solid #140e01;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+/* Hover State: Invert Colors & Lift */
+.Dbutton:hover,
+.Sbutton:hover {
+    color: #ffffff;
+    background-color: #140e01;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Active State: Press effect */
+.Dbutton:active,
+.Sbutton:active {
+    transform: translateY(0);
+}
+
+/* Background Image Adjustments */
+.backgimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    /* Subtler background */
+}
+
+/* --- Keyframes --- */
+@keyframes formFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    .form {
+        width: 95%;
+        padding: 40px 20px;
+    }
+
+    .button {
+        flex-direction: column;
+        /* Stack buttons on small screens */
+        width: 100%;
+    }
+
+    .Dbutton,
+    .Sbutton {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .applyform {
+        font-size: 1.6rem;
+    }
+}
+
+/* Container Styling */
+.Home-Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    background: #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background decorative image (shine2) */
+.shine2 {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 300px;
+    opacity: 0.4;
+    filter: blur(40px);
+    z-index: 0;
+    animation: pulse 6s infinite ease-in-out;
+}
+
+.allcontent {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    /* Image left, Text right */
+    gap: 60px;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Title Styling */
+.WelcomeAddress {
+    grid-column: 1 / -1;
+    /* Stretch across both columns */
+    font-size: 42px;
+    font-weight: 900;
+    color: #142922;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: slideDown 0.8s ease forwards;
+}
+
+/* Director Image Styling */
+.directorsimg {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 30px;
+    box-shadow: 25px 25px 0px #b6ab11;
+    /* TeCc Green Offset Border */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: imageReveal 1s cubic-bezier(0.23, 1, 0.32, 1) forwards 0.3s;
+}
+
+/* Card Name (Title/Name) */
+.cardname {
+    margin-top: -100px;
+    /* Overlap effect for modern look */
+    background: white;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: fit-content;
+    opacity: 0;
+    animation: slideUp 0.6s ease forwards 0.8s;
+}
+
+.Mary {
+    font-size: 22px;
+    color: #585307;
+    margin: 0;
+}
+
+.Executive {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 5px;
+}
+
+/* Welcome Text Paragraph */
+.text3 {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #334155;
+    text-align: justify;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
+}
+
+/* --- Animations --- */
+@keyframes imageReveal {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+    .allcontent {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .directorsimg {
+        max-width: 300px;
+        margin: 0 auto;
+        box-shadow: 15px 15px 0px #278f2e;
+    }
+
+    .cardname {
+        margin: -20px auto 0;
+    }
+
+    .WelcomeAddress {
+        font-size: 32px;
+    }
+}
+
+/* Container Layout */
+.details-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 60px 5%;
+    background-color: #f8fafc;
+    perspective: 1000px;
+    /* Enables 3D depth */
+}
+
+/* Base Card Styling with Glassmorphism */
+[class^="details-Card"] {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 24px;
+    border: 1px solid rgba(180, 134, 134, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    /* Hidden initially for animation */
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Staggered Animation Delays (Makes them appear one by one) */
+.details-Card1 {
+    animation-delay: 0.1s;
+}
+
+.details-Card2 {
+    animation-delay: 0.3s;
+}
+
+.details-Card3 {
+    animation-delay: 0.5s;
+}
+
+.details-Card4 {
+    animation-delay: 0.7s;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effects */
+[class^="details-Card"]:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(39, 143, 46, 0.12);
+    /* TeCc Green glow */
+    border-color: #278f2e;
+}
+
+/* Typography Styling */
+[class^="details-heading"] {
+    font-size: 20px;
+    font-weight: 800;
+    color: #142922;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Animated underline on heading */
+[class^="details-heading"]::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #278f2e;
+    transition: width 0.3s ease;
+}
+
+[class^="details-Card"]:hover [class^="details-heading"]::after {
+    width: 100%;
+}
+
+[class^="details-notes"] {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .details-section {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+}

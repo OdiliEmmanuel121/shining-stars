@@ -1,0 +1,103 @@
+.Navup-Container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.shinImg {
+    height: 80px;
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+.shintext {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-top: 10px;
+    color: #534f14;
+    font-family: 'Arial', sans-serif;
+}
+
+.NavupLinks {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    gap: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Arial', sans-serif;
+    
+
+}
+
+.navLink1, .navLink2, .navLink3, .navLink4, .navLink5, .navLink6 {
+    text-decoration: none;
+    color: #383636;
+    transition: color 0.3s ease;
+}
+
+.navLink1:hover, .navLink2:hover, .navLink3:hover, .navLink4:hover, .navLink5:hover, .navLink6:hover {
+    color: #ffffff;
+    background-color: #534f14;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.shintext:hover {
+    color: #d32d28;
+}
+
+/* Add this to your main CSS file */
+.hamburger {
+    display: none; /* Hidden on Desktop */
+    cursor: pointer;
+    z-index: 1001; /* Stay above the menu overlay */
+}
+
+.bar {
+    display: block;
+    width: 25px;       /* Width of the lines */
+    height: 3px;       /* Thickness of the lines */
+    margin: 5px auto;  /* Spacing between lines */
+    background-color: #534f14; /* The color of your icon */
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* --- MOBILE VIEW (MAX 768px) --- */
+@media (max-width: 500px) {
+    .Navup-Container {
+        padding: 10px 15px; /* Add breathing room */
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block !important; /* Force display */
+    }
+
+    .NavupLinks {
+        position: fixed;
+        left: -100%;
+        top: 0; /* Start from top of screen */
+        height: 100vh; /* Fill entire screen height */
+        flex-direction: column;
+        justify-content: center; /* Center links vertically */
+        background-color: #d3d353;
+        width: 80%; /* Don't cover the whole screen so user can tap out */
+        transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 999;
+    }
+
+    .NavupLinks.open {
+        left: 0;
+    }
+
+    /* Small logo for mobile */
+    .shinImg { margin-left: 0; height: 40px; }
+    .shintext { font-size: 14px; margin-left: 5px; }
+}
