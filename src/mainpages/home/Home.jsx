@@ -2,6 +2,10 @@ import './Home.css'
 import shin2 from '../../assets/shin2.jpeg'
 import shin from '../../assets/shin.jpeg'
 import ceo from '../../assets/ceo.jpg'
+import { Facebook, Instagram, Twitter, LinkedIn, Mail, Phone, LocationOn } from '@mui/icons-material';
+import shine1 from '../../assets/shine1.jpg'
+import shine2 from '../../assets/shine2.jpg'
+import shine3 from '../../assets/shine3.jpg'
 
 const Home = () => {
     return (
@@ -45,6 +49,39 @@ const Home = () => {
             </div>
 
 
+            <div className='shine-grid'>
+                <div className='shine-card'>
+                    <div className='image-wrapper'>
+                        <img className='shine-img' src={shine1} alt="Academic Excellence" />
+                    </div>
+                    <div className='shine-caption'>
+                        <h3>Academic Excellence</h3>
+                        <p>Nurturing minds through world-class curriculum and dedicated mentorship.</p>
+                    </div>
+                </div>
+
+                <div className='shine-card'>
+                    <div className='image-wrapper'>
+                        <img className='shine-img' src={shine2} alt="Modern Facilities" />
+                    </div>
+                    <div className='shine-caption'>
+                        <h3>Modern Facilities</h3>
+                        <p>State-of-the-art laboratories and creative spaces for holistic learning.</p>
+                    </div>
+                </div>
+
+                <div className='shine-card'>
+                    <div className='image-wrapper'>
+                        <img className='shine-img' src={shine3} alt="Global Community" />
+                    </div>
+                    <div className='shine-caption'>
+                        <h3>Global Community</h3>
+                        <p>Fostering intercultural understanding and lifelong international friendships.</p>
+                    </div>
+                </div>
+            </div>
+
+
             <div className='Home-Content'>
                 <img src={shin2} alt="shinimg" className='shine2' />
                 <div className='allcontent'>
@@ -71,7 +108,7 @@ const Home = () => {
                     <p className='details-notes2' >Committed to antagonistic development, we cultivate creativity, wellbeing, and character through diverse experiences in the arts, sport, service, and leadership.</p>
                 </div>
 
-                
+
                 <div className='details-Card3'>
                     <header className='details-heading3'>Superiority in Multinational Education</header>
                     <p className='details-notes3' >Experience academic excellence at an accredited IB World School — offering the PYP, MYP, and DP, and preparing students for success at top universities around the world.</p>
@@ -82,6 +119,51 @@ const Home = () => {
                     <p className='details-notes4' >Small class sizes and a supportive, inclusive atmosphere where every student is known, challenged, and inspired to reach their potential.</p>
                 </div>
             </div>
+
+
+            <footer className="footer">
+                <div className="footer-content">
+                    {/* Column 1: About */}
+                    <div className="footer-column">
+                        <h3 className="footer-logo">Shining Stars</h3>
+                        <p className="footer-about">
+                            Nurturing global-mindedness, intercultural understanding, and academic excellence since 1995.
+                        </p>
+                        <div className="social-links">
+                            <Facebook /> <Instagram /> <Twitter /> <LinkedIn />
+                        </div>
+                    </div>
+
+                    {/* Column 2: Quick Links */}
+                    <div className="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="/abt">About Us</a></li>
+                            <li><a href="/adm">Admissions</a></li>
+                            <li><a href="/aca">Academics</a></li>
+                            <li><a href="/con">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    {/* Column 3: Contact Info */}
+                    <div className="footer-column">
+                        <h3>Contact Us</h3>
+                        <div className="contact-item">
+                            <LocationOn /> <span>123 School Lane, Lagos, Nigeria</span>
+                        </div>
+                        <div className="contact-item">
+                            <Phone /> <span>+234 000 000 0000</span>
+                        </div>
+                        <div className="contact-item">
+                            <Mail /> <span>info@shiningstars.edu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="footer-bottom">
+                    <p>© 2026 Shining Stars International Academy. All rights reserved.</p>
+                </div>
+            </footer>
         </div>
     )
 }

@@ -1,0 +1,133 @@
+.admission-page {
+    width: 100%;
+    background: #ffffff;
+}
+
+/* Hero Section */
+.adm-hero {
+    background: linear-gradient(rgba(20, 41, 34, 0.8), rgba(20, 41, 34, 0.8)), 
+                url('../../assets/admission-bg.jpg') center/cover;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.adm-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 10px; }
+
+/* Process Section */
+.process-section {
+    padding: 80px 10%;
+    background: #fdfdfd;
+}
+
+.adm-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #142922;
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.step-card {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-bottom: 4px solid #d4c21f; /* Gold accent */
+    transition: 0.3s;
+}
+
+.step-card:hover { transform: translateY(-10px); }
+
+.step-icon {
+    font-size: 3rem;
+    color: #278f2e;
+    margin-bottom: 15px;
+}
+
+.step-icon svg { font-size: 3rem; }
+
+/* Requirements Card */
+.req-section {
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.req-card {
+    background: #142922;
+    color: white;
+    padding: 50px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.req-card h2 { color: #d4c21f; margin-bottom: 25px; }
+
+.req-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.req-card ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.req-card ul li::before {
+    content: "✓";
+    margin-right: 15px;
+    color: #d4c21f;
+    font-weight: bold;
+}
+
+/* Buttons */
+.adm-cta {
+    display: flex;
+    gap: 20px;
+}
+
+.apply-btn {
+    padding: 15px 30px;
+    background: #d4c21f;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.inquiry-btn {
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* --- Mobile View (500px) --- */
+@media (max-width: 500px) {
+    .process-section, .req-section { padding: 40px 20px; }
+    
+    .adm-cta { flex-direction: column; }
+    
+    .req-card { padding: 30px; }
+    
+    .adm-title { font-size: 1.8rem; }
+}
