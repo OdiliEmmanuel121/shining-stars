@@ -28,13 +28,13 @@ const Academics = () => {
       <header className="acad-hero">
         <div className="hero-overlay">
           <h1>Academic Excellence</h1>
-          <p className='pgit' >An IB World School committed to global-mindedness and rigorous inquiry.</p>
+          <p className='pgit' >A learning pathway committed to global-mindedness and rigorous inquiry.</p>
         </div>
       </header>
 
       {/* IB Program Section */}
       <section className="ib-section">
-        <h2 className="acad-title">The IB Pathway</h2>
+        <h2 className="acad-title">Educational Procedure</h2>
         <div className="ib-grid">
           {programs.map((item, index) => (
             <div className="ib-card" key={index}>
@@ -99,10 +99,10 @@ const Academics = () => {
           <div className="footer-column">
             <h3>Contact Us</h3>
             <div className="contact-item">
-              <LocationOn /> <span>123 School Lane, Lagos, Nigeria</span>
+              <LocationOn /> <span>10 Zone2 road Egbeda, Ibadan, Nigeria</span>
             </div>
             <div className="contact-item">
-              <Phone /> <span>+234 000 000 0000</span>
+              <Phone /> <span>+234 813 117 6627</span>
             </div>
             <div className="contact-item">
               <Mail /> <span>info@shiningstars.edu</span>

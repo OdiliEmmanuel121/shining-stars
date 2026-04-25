@@ -149,17 +149,16 @@ const Home = () => {
                     <div className="footer-column">
                         <h3>Contact Us</h3>
                         <div className="contact-item">
-                            <LocationOn /> <span>123 School Lane, Lagos, Nigeria</span>
+                            <LocationOn /> <span>10 Zone2 road Egbeda, Ibadan, Nigeria</span>
                         </div>
                         <div className="contact-item">
-                            <Phone /> <span>+234 000 000 0000</span>
+                            <Phone /> <span>+234 813 117 6627</span>
                         </div>
                         <div className="contact-item">
                             <Mail /> <span>info@shiningstars.edu</span>
                         </div>
                     </div>
                 </div>
-
                 <div className="footer-bottom">
                     <p>© 2026 Shining Stars International Academy. All rights reserved.</p>
                 </div>
